@@ -3,6 +3,8 @@ package com.kosta.helloworld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -22,7 +24,7 @@ public class StudentService {
         sr.save(student);
     }
 
-    public Student findStudent(String name){
-        return sr.findById(name).get();
+    public List<Student> findStudentByName(String name){
+        return sr.findByName(name);
     }
 }
